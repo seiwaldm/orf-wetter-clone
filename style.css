@@ -1,12 +1,62 @@
+@font-face {
+  font-family: orf-on;
+  src: url(orf-on.woff2);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow: hidden; */
 }
 
 .vorlage {
   position: absolute;
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0.6;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 130px 800px 1fr;
+  grid-template-rows: 25px 85px 1675px;
+  background-color: #5286c1;
+}
+
+/* --------- navigation header --------- */
+.nav {
+  grid-area: 1 / 2 / 2 / 3;
+  background-color: #4371a3;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-family: orf-on;
+  font-size: 0.7rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: #abbfd2;
+}
+
+/* --------- logo section --------- */
+.logos {
+  grid-row: 2;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+}
+.logos img {
+  height: 40px;
+}
+
+.logos img:hover {
+  cursor: pointer;
 }
