@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: orf-on;
 }
 
 .vorlage {
@@ -18,7 +19,7 @@
 body {
   display: grid;
   grid-template-columns: 130px 800px 1fr;
-  grid-template-rows: 25px 85px 1675px;
+  grid-template-rows: auto 80px 1675px;
   background-color: #5286c1;
 }
 
@@ -30,9 +31,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
-  font-family: orf-on;
-  font-size: 0.7rem;
+  padding: 6px 15px;
+  font-size: 13px;
 }
 
 .nav a {
@@ -40,7 +40,8 @@ body {
   color: white;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav a:focus {
   text-decoration: underline;
   color: #abbfd2;
 }
@@ -59,4 +60,58 @@ body {
 
 .logos img:hover {
   cursor: pointer;
+}
+
+/* --------- main content --------- */
+main {
+  grid-area: 3/2/4/3;
+  display: grid;
+  grid-template-columns: 160px 480px 160px;
+  grid-template-rows: auto 1fr;
+}
+
+/* --------- regions --------- */
+.regions {
+  grid-column: 1/-1;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  background-color: #ebecee;
+  position: relative;
+  padding: 6px 15px;
+}
+
+.regions * {
+  text-decoration: none;
+  color: #556da6;
+  background-color: #ebecee;
+  letter-spacing: -0.5px;
+  font-size: 13px;
+}
+.regions > li {
+  margin-right: 40px;
+}
+
+.regions a:hover {
+  color: black;
+}
+
+#welt:hover .subregions,
+#europa:hover .subregions,
+#oesterreich:hover .subregions {
+  display: block;
+  position: absolute;
+}
+.right {
+  margin-left: auto;
+}
+
+.subregions {
+  list-style: none;
+  display: none;
+  padding: 10px 0;
+}
+
+.subregions > li {
+  padding: 3px 7px;
 }
