@@ -68,6 +68,7 @@ main {
   display: grid;
   grid-template-columns: 160px 480px 160px;
   grid-template-rows: auto 1fr;
+  /* background-color: white; */
 }
 
 /* --------- regions --------- */
@@ -96,9 +97,7 @@ main {
   color: black;
 }
 
-#welt:hover .subregions,
-#europa:hover .subregions,
-#oesterreich:hover .subregions {
+.hasSubmenu:hover ul {
   display: block;
   position: absolute;
 }
@@ -114,4 +113,75 @@ main {
 
 .subregions > li {
   padding: 3px 7px;
+}
+
+/* --------- aside --------- */
+
+aside {
+  grid-area: 2/3;
+  color: #556da6;
+  padding-left: 4px;
+}
+.info-types {
+  position: relative;
+}
+
+.info-types * {
+  list-style: none;
+  color: #556da6;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.info-types > li,
+aside .submenu > li {
+  padding: 10px 8px;
+  margin-bottom: 3px;
+  background-color: #f0f1f2;
+}
+
+aside .submenu > li {
+  background-color: white !important;
+}
+
+aside .submenu {
+  background-color: white;
+  width: 160px;
+  left: -160px;
+  top: 0px;
+}
+.info-types > li:hover {
+  background-color: white;
+}
+
+.info-types ul {
+  display: none;
+}
+
+.newslink {
+  display: flex;
+  padding: 10px 10px;
+  align-items: center;
+  background: white;
+  border: 1px solid #f0f1f2;
+}
+.newslink:hover,
+aside a:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.newslink > img {
+  width: 20px;
+  margin-right: 4px;
+}
+
+aside > img {
+  margin-top: 3px;
+  width: 100%;
+}
+
+.hasSubmenu:hover .submenu {
+  display: block;
+  position: absolute;
 }
